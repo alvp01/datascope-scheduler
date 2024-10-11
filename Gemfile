@@ -25,6 +25,10 @@ gem "bootsnap", require: false
 
 gem "jsonapi-serializer"
 
+group :test do
+  gem "shoulda-matchers", "~> 5.0"
+end
+
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
@@ -42,4 +46,8 @@ group :development, :test do
   gem "rubocop-rails-omakase", require: false
 
   gem "faker"
+
+  gem "rspec-rails"
+
+  gem "factory_bot_rails"
 end
