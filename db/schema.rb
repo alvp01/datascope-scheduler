@@ -16,7 +16,6 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_10_145030) do
 
   create_table "events", force: :cascade do |t|
     t.string "location"
-    t.text "description"
     t.datetime "end_time", null: false
     t.datetime "start_time", null: false
     t.boolean "is_physical_location", default: false
