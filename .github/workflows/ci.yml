@@ -21,11 +21,7 @@ jobs:
 
       - name: Scan for common Rails security vulnerabilities using static analysis
         run: bin/brakeman --no-pager
-<<<<<<< HEAD
-
-=======
         
->>>>>>> origin/REQ1-event-timeline
   lint:
     runs-on: ubuntu-latest
     steps:
