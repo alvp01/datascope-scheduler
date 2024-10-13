@@ -8,7 +8,7 @@
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
-- [📖🚗 PRD DataScheduler App ](#-esport-gaming-center-app-)
+- [📖🚗 PRD DataScheduler App ](#-prd-datascheduler-app-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
@@ -16,6 +16,7 @@
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
     - [Install](#install)
+    - [Usage](#usage)
   - [👥 Developer ](#-developer-)
   - [🙏 Acknowledgments ](#-acknowledgments-)
 
@@ -47,6 +48,7 @@ Click on the [link](https://github.com/alvp01/esports-gaming-center-backend) to 
 - **List the users active event**
 - **Mail the user when an event is created**
 - **Notify the weather conditions if the event has a physical location**
+- **Create events on users schedule**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -83,7 +85,6 @@ Install this project with:
 ```sh
   cd datascope-scheduler
   bundle install
-  npm install
 ```
 
 ### Usage
@@ -91,14 +92,46 @@ Install this project with:
 To run the project, execute the following command:
 
 ```sh
-./bin/dev
-```
-**Note:** If there are any errors consider adding your necesary username and password in `database.yml` for setting up your local enviroment and use the following comand:
+rails db:drop db:create db:migrate db:seed
 
-```sh
-rails db:drop db:create db:migrate
-./bin/dev
+rails s
 ```
+
+The urls for the requests:
+
+- Events:
+  `GET http://127.0.0.1:3000/`: Lists all the events in chronological order
+  `GET http://127.0.0.1:3000/api/v1/events`: Same as above
+  `POST http://127.0.0.1:3000/api/v1/events`: Creates an event in a user's schedule
+- User:
+  `GET http://127.0.0.1:3000/api/v1/users`: Lists all the users and their events
+  `GET http://127.0.0.1:3000/api/v1/users/:id`: List a user and their events
+  `POST http://127.0.0.1:3000/api/v1/users`: Creates a user
+
+Example bodies for post requests (using postman):
+
+Event creation:
+```
+{
+    "event": {
+        "location": "some location",
+        "start_time": "Saturday, October 12, 2024 at 04:35 AM",
+        "end_time": "Saturday, October 12, 2024 at 04:40 AM"
+    },
+    "user_id": 7
+}
+```
+
+User creation:
+```
+{
+    "user": {
+        "email": "example@email.com",
+        "name": "some name"
+    }
+}
+```
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
