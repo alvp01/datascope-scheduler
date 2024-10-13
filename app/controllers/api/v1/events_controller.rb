@@ -6,11 +6,10 @@ class Api::V1::EventsController < ApplicationController
   end
 
   def create
-    user = User.find(params[:user_id])
-
-    render json: { error: "User not found" }, status: :not_found if user.nil?
-
     begin
+
+      user = User.find(params[:user_id])
+
       @event = CreateEventService.new(event_params[:location], event_params[:start_time], event_params[:end_time], user).call
       render json: { event: EventSerializer.new(@event), status: :created }
     rescue StandardError => e
