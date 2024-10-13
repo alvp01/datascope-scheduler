@@ -25,6 +25,8 @@ gem "bootsnap", require: false
 
 gem "jsonapi-serializer"
 
+gem "email_validator"
+
 group :test do
   gem "shoulda-matchers", "~> 5.0"
 end
