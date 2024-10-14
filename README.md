@@ -18,6 +18,7 @@
     - [Install](#install)
     - [Usage](#usage)
     - [Set up the mailer](#set-up-the-mailer)
+    - [OpenWeather Integration and request:](#openweather-integration-and-request)
   - [👥 Developer ](#-developer-)
   - [🙏 Acknowledgments ](#-acknowledgments-)
 
@@ -147,6 +148,26 @@ ADMIN_EMAIL: your email so it ways where is the email from and the destination e
 - You can check the mailer worked by checking the Mailtrap inbox after creating an event:
   ![image2](mailer-setup2.png)
 
+
+### OpenWeather Integration and request:
+
+Register at [OpenWeather](https://openweathermap.org/) and get your API key, then create a key in your .env file with the name: OPENWEATHER_API
+
+To get the weather query, the request must be like the following:
+
+```
+{
+    "event": {
+        "location": "lat:45.133 lon:7.367",
+        "start_time": "Saturday, October 12, 2024 at 06:05 AM",
+        "end_time": "Saturday, October 12, 2024 at 06:20 AM",
+        "is_physical_location": true
+    },
+    "user_id": 7
+}
+```
+
+**note: if the is_physical_location key is false or doesn't exists the weather forecast will not appear. Additionally, is the is_physical_location key is given but wrong location is given (format or coordinates) the query will fail but the event will be created nonetheless** 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
