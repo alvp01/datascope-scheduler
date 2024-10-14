@@ -17,6 +17,7 @@
     - [Setup](#setup)
     - [Install](#install)
     - [Usage](#usage)
+    - [Set up the mailer](#set-up-the-mailer)
   - [👥 Developer ](#-developer-)
   - [🙏 Acknowledgments ](#-acknowledgments-)
 
@@ -131,6 +132,20 @@ User creation:
     }
 }
 ```
+
+### Set up the mailer
+
+- Create a .env files with the following keys:
+MAILTRAP_TOKEN: you api token from mailtrap
+INBOX_ID: it will tell the app where to send the mails
+ADMIN_EMAIL: your email so it ways where is the email from and the destination email
+
+- Create your [Mailtrap](https://mailtrap.io/) account
+- You can find you MAILTRAP_TOKEN and INBOX_ID in the following section (click to copy):
+  ![image1](mailer-setup1.png)
+
+- You can check the mailer worked by checking the Mailtrap inbox after creating an event:
+  ![image2](mailer-setup2.png)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
