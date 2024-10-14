@@ -32,6 +32,8 @@ gem "mailtrap", "~> 2.1"
 
 gem "dotenv", "~> 3.1", ">= 3.1.4"
 
+gem "httparty"
+
 group :test do
   gem "shoulda-matchers", "~> 5.0"
 end
