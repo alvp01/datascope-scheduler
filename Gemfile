@@ -35,7 +35,7 @@ gem "dotenv", "~> 3.1", ">= 3.1.4"
 gem "httparty"
 
 group :test do
-  gem "shoulda-matchers", "~> 5.0"
+  gem "shoulda-matchers", "~> 6.4"
 end
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
